@@ -1,0 +1,22 @@
+{
+  "name": "aoc2015",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world",
+    "test": "npm run build && jest --coverage",
+    "watch:bsb": "bsb -make-world -w",
+    "watch:jest": "jest --coverage --watchAll",
+    "watch:screen": "screen -c .screenrc"
+  },
+  "keywords": [
+    "BuckleScript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@glennsl/bs-jest": "^0.4.3",
+    "bs-platform": "^4.0.5"
+  }
+}
