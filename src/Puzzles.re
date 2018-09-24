@@ -53,4 +53,8 @@ let findPosition = code => {
 /* 2*l*w + 2*w*h + 2*h*l */
 let findWrappingPaper = (length, width, height) =>
   [2 * length * width, 2 * width * height, 2 * height * length]
-  |> List.fold_left((prev, cur) => prev + cur, 0);
+  |> List.fold_left(
+       ((sum, min), cur) => (sum + cur, cur < min ? cur : min),
+       (0, Js.Int.max),
+     )
+  |> (r => fst(r) + snd(r) / 2);
